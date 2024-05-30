@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Planetary Science: Exploring the formation and evolution of planets: Log-in</title>
+    <style>
+	 
+body {
+
+ background-image: url("https://nhauniverse.com/cdn/shop/products/Apollo_208_20Earthrise_18384ff2-bd5c-45b0-9b9c-d176dbce0f20_1024x1024.jpg?v=1489582139");
+ background-repeat: no-repeat;
+ background-size: cover; 
+ background-position: center;
+ height: 600px  ;
+}
+.containerMain {
+
+ box-sizing: border-box;
+ width: 250px;
+ height: 900px;
+ background-color: rgba(255, 255, 255, 0.6);
+ padding: 20px;		 
+ border-radius: 5px;
+ position: fixed;
+ left: 125px;
+ top: 340px;
+ transform: translate(-50%, -50%);
+ display: flex;
+ flex-direction: column;	
+ justify-content: center;
+ align-items: center;
+}
+
+button {
+ background-color: green;
+ color: white;
+ padding: 10px 20px;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ text-transform: uppercase;
+}
+
+.containerMain h1, .containerMain h2 {
+
+ margin: 0;
+ text-align: top;
+    
+ </style>
+</head>
+  
+  
+<body>
+ <div class="containerMain">
+ <h1>Planetary</h1>
+ <br>
+ <h2>Science</h2>
+   <form onsubmit="submitForm(event);">
+      <div class="container0">
+		<input id="Name" type="text" required placeholder = "Name">
+      </div>
+		
+	  <div class="container1">
+		</br>
+		<input id="Email" type="email" required placeholder = "Email">
+      </div>
+		
+	  <div class="container2">
+	    </br>
+		<input id="Password" type="password" required placeholder = "Password">
+	  </div>
+		
+      <div class="container3">
+	    </br>
+	    <input id="ConfirmPassword" type="password" required placeholder = "Confirm Password">
+	  </div>
+	    <br>
+		
+	  <div id="GenderChecking">
+        <input type="checkbox" id="Gender1?">
+		<label>Male</label>
+        <input type="checkbox" id="Gender2?">
+		<label>Female</label>
+		<input type="text" id="Other" placeholder = "Other/ N/A">
+
+      </div>
+		
+	  <div class="container4">
+	    </br>
+	    <button type="submit">Submit</button>
+		<button type="submit" value="Clear" onclick="clearAnything();">Clear</button>
+	  </div>
+     </form>
+ </div>
+  
+  <div class="containerSub">
+  
+  
+  
+  </div>
+</body>
+    <script>
+    function submitForm(event) {
+     event.preventDefault();
+
+     var username = document.getElementById("Name").value;
+     var password = document.getElementById("Password").value;
+	 var email = document.getElementById("Email").value;
+
+     if (password !== document.getElementById("ConfirmPassword").value) {
+       alert("Passwords is not matched.");
+       return;
+     }
+
+     localStorage.setItem("Name of User", username);
+     localStorage.setItem(" User's Password", password);
+	 localStorage.setItem("User's Email", email);
+
+     alert("Log-in done.");
+	 window.location.href = "Main.html";
+	 
+   }
+
+   function clearAnything() {
+     document.getElementById("Name").value = '';
+     document.getElementById("Email").value = '';
+     document.getElementById("Password").value = '';
+     document.getElementById("ConfirmPassword").value = '';
+	 document.getElementById("Other").value = '';
+   }
+ </script>
+</html>
+  
